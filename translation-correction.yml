@@ -1,0 +1,88 @@
+name: Translation Correction
+description: Something the skill outputs doesn't sound natural — submit a native speaker correction
+labels: ["correction", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Thanks for contributing.** Native speaker corrections are the most valuable input this project can receive.
+        Fill in as much as you can — the more context you give, the faster the fix lands.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      description: Which language does this correction apply to?
+      options:
+        - Spanish
+        - German
+        - French
+        - Italian
+        - Russian
+        - Brazilian Portuguese
+        - European Portuguese
+        - Japanese
+        - Chinese
+        - Korean
+        - English
+        - Other (specify in the fields below)
+    validations:
+      required: true
+
+  - type: input
+    id: dialect
+    attributes:
+      label: Dialect or region (if applicable)
+      placeholder: e.g. Mexican Spanish, Austrian German, Québécois French, Cantonese
+
+  - type: input
+    id: input-phrase
+    attributes:
+      label: Input phrase
+      description: The exact word or phrase you typed into the skill
+      placeholder: e.g. "it is what it is"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-output
+    attributes:
+      label: Current skill output
+      description: Paste what the skill currently produces for this phrase
+      placeholder: |
+        Expression: ...
+        Register: ...
+        Context & Usage: ...
+        In the wild: "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Your correction
+      description: What should it say instead? Use the skill's output format if possible.
+      placeholder: |
+        Expression: ...
+        Register: ...
+        Context & Usage: ...
+        In the wild: "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Why this is more natural
+      description: As a native speaker — what's wrong with the current output? When and where would your version be used instead?
+      placeholder: e.g. "The current expression is technically correct but sounds like a textbook. No one under 60 actually says this in casual conversation..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Attestation
+      options:
+        - label: I am a native or near-native speaker of this language / dialect
+          required: true

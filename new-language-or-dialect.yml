@@ -1,0 +1,66 @@
+name: New Language or Dialect
+description: Add support for a new language, or add dialect-specific rules to an existing one
+labels: ["new-language", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to add a language the skill doesn't cover yet, or to propose structured dialect rules for an existing language (like the EP / BP split for Portuguese).
+
+  - type: input
+    id: language
+    attributes:
+      label: Language or dialect name
+      placeholder: e.g. Turkish, Swiss German, Taiwanese Mandarin, Rioplatense Spanish
+    validations:
+      required: true
+
+  - type: input
+    id: shorthands
+    attributes:
+      label: Suggested shorthand(s)
+      description: Abbreviations that should trigger this language
+      placeholder: e.g. TR for Turkish, CH-DE for Swiss German
+
+  - type: textarea
+    id: dialect-rules
+    attributes:
+      label: Dialect-specific rules (if any)
+      description: |
+        Are there specific vocabulary, grammar, register, or regional patterns the skill must follow?
+        Model this after the Portuguese Dialect Selection block in SKILL.md.
+      placeholder: |
+        e.g. Swiss German uses "Grüezi" not "Hallo" for formal greetings;
+        never output standard High German slang as if it's used in Switzerland...
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example inputs and ideal outputs
+      description: Provide 2–3 examples using the skill's output format
+      placeholder: |
+        Input: /howtosay "it is what it is" - [your language]
+
+        Expression: ...
+        Register: ...
+        Context & Usage: ...
+        In the wild: "..."
+
+        ---
+
+        Input: /howtosay "I'm exhausted" - [your language]
+
+        Expression: ...
+        Register: ...
+        Context & Usage: ...
+        In the wild: "..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Attestation
+      options:
+        - label: I am a native or near-native speaker of this language / dialect
+          required: true
