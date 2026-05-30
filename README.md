@@ -19,8 +19,7 @@ Most translation tools give you the correct word. This skill gives you the **rig
 
 ## Installation
 
-<details>
-<summary>macOS / Linux</summary>
+### macOS / Linux
 
 **One-liner (curl):**
 ```bash
@@ -37,10 +36,7 @@ curl -fsSL https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main
 curl -fsSL https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/install.sh | sh -s -- --update
 ```
 
-</details>
-
-<details>
-<summary>Windows (PowerShell)</summary>
+### Windows (PowerShell)
 
 **Install:**
 ```powershell
@@ -51,8 +47,6 @@ New-Item -ItemType Directory -Force -Path "claude\skills\howtosay" | Out-Null; I
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/SKILL.md" -OutFile "claude\skills\howtosay\SKILL.md"
 ```
-
-</details>
 
 **Manual install:**
 Drop [`SKILL.md`](./SKILL.md) into your `claude/skills/howtosay/` directory.
