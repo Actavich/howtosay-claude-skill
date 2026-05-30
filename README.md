@@ -1,17 +1,15 @@
-# 🗣️ howtosay — Native-Level Translation Skill for Claude
+# /howtosay - Native-Level Translation Skill for Claude
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A Claude skill that delivers **native-level, register-aware translations** — not dictionary definitions, not textbook phrases, but what people actually say.
+Most translation tools give you the correct word. This skill gives you the right word for the moment — the phrase a native speaker reaches for without thinking.
 
 ---
 
-## What makes it different
-
-Most translation tools give you the correct word. This skill gives you the **right word for the moment**.
+## Features
 
 - **Register-aware** — every output is labeled: Formal / Neutral / Casual / Colloquial / Slang
-- **In-the-wild examples** — sentences as a native speaker would actually say them, with contractions, clipped forms, and filler words intact
+- **In-the-wild examples** — sentences as a native speaker would say them, contractions and filler words intact
 - **Session memory** — set your target language once per conversation, then just type
 - **Edge-case handling** — no clean equivalent? The skill explains the gap rather than guessing
 
@@ -49,7 +47,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Actavich/howtosay-clau
 ```
 
 **Manual install:**
-Drop [`SKILL.md`](./SKILL.md) into your `claude/skills/howtosay/` directory.
+Drop [`SKILL.md`](./SKILL.md) into `claude/skills/howtosay/`.
 
 ```
 claude/
@@ -58,7 +56,7 @@ claude/
         └── SKILL.md
 ```
 
-The skill activates automatically on any message starting with `/howtosay`.
+The skill activates on any message starting with `/howtosay`.
 
 ---
 
@@ -68,11 +66,11 @@ The skill activates automatically on any message starting with `/howtosay`.
 /howtosay [word / phrase / expression] - [target language]
 ```
 
-**Set your language once, then drop it:**
+Set your language once, then drop it:
 
 ```
 /howtosay it is what it is - ES       → sets Spanish as session default
-/howtosay what a mess                  → still uses Spanish, no need to repeat
+/howtosay what a mess                  → still Spanish, no need to repeat
 /howtosay that's not my problem - DE  → switches default to German
 ```
 
@@ -103,7 +101,7 @@ Full language names also work: `/howtosay relax - Turkish`
 /howtosay it is what it is - ES
 ```
 
-> 🗣️ **Spanish**
+>  **Spanish**
 >
 > **Expression:** es lo que hay
 >
@@ -117,7 +115,7 @@ Full language names also work: `/howtosay relax - Turkish`
 
 ## Portuguese
 
-Specifying just `PT` or "Portuguese" without a dialect will prompt the skill to ask **once per session:**
+Specifying `PT` or "Portuguese" without a dialect prompts the skill to ask once per session:
 
 > *"European (EP) or Brazilian (BP) Portuguese?"*
 
@@ -130,9 +128,7 @@ Your choice is stored for the rest of the conversation.
 
 ## Dialect Customization
 
-The base skill deliberately avoids regional bias — outputs are broadly understood across each language. If you want tighter regional targeting (a specific city, generation, or subculture), you can add personal rules directly to your local copy of `SKILL.md`.
-
-For example, you could add a block like:
+The base skill avoids regional bias — outputs work broadly across each language. For tighter targeting (a specific city, generation, or subculture), add personal rules to your local copy of `SKILL.md`:
 
 ```markdown
 ## ⚠️ Personal Rule — [Language]
@@ -140,18 +136,21 @@ Whenever the target is [language]:
 → [Your rule — e.g. use X dialect, prefer Y register, flag Z regional terms]
 ```
 
-Your local file stays yours. If your customization is broadly useful (e.g. a well-defined dialect split), consider contributing it back via a PR so others can opt into it too.
+Your local file stays yours. If the customization is broadly useful, consider contributing it back via a PR.
 
 ---
 
 ## Contributing
 
-Native speakers are the source of truth for this skill. If something sounds textbooky, regional in the wrong way, or flat-out wrong in your language — you're exactly who should fix it.
+Native speakers are the source of truth. If something sounds textbooky, regional in the wrong way, or flat-out wrong in your language — you're exactly who should fix it.
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to:
-- Correct a translation or register label
-- Add support for a new language or dialect
-- Use the issue templates to report a problem without touching any code
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to correct a translation, add a language, or use the issue templates without touching any code.
+
+---
+
+## Contact
+
+Questions or collaboration ideas? Reach me at [anastasiiaoktovich@gmail.com](mailto:anastasiiaoktovich@gmail.com).
 
 ---
 
