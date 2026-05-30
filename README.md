@@ -19,20 +19,40 @@ Most translation tools give you the correct word. This skill gives you the **rig
 
 ## Installation
 
+<details>
+<summary>macOS / Linux</summary>
+
 **One-liner (curl):**
 ```bash
-mkdir -p claude/skills/howtosay && curl -fsSL https://raw.githubusercontent.com/actavich/howtosay-claude-skill/main/SKILL.md -o claude/skills/howtosay/SKILL.md
+mkdir -p claude/skills/howtosay && curl -fsSL https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/SKILL.md -o claude/skills/howtosay/SKILL.md
 ```
 
 **Or use the install script:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/actavich/howtosay-claude-skill/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/install.sh | sh
 ```
 
 **To update an existing install:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/actavich/howtosay-claude-skill/main/install.sh | sh -s -- --update
+curl -fsSL https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/install.sh | sh -s -- --update
 ```
+
+</details>
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
+**Install:**
+```powershell
+New-Item -ItemType Directory -Force -Path "claude\skills\howtosay" | Out-Null; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/SKILL.md" -OutFile "claude\skills\howtosay\SKILL.md"
+```
+
+**To update an existing install:**
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Actavich/howtosay-claude-skill/main/SKILL.md" -OutFile "claude\skills\howtosay\SKILL.md"
+```
+
+</details>
 
 **Manual install:**
 Drop [`SKILL.md`](./SKILL.md) into your `claude/skills/howtosay/` directory.
